@@ -12,7 +12,7 @@ node('master') {
             sh "./develop composer install"
 
             // Create .env file for testing
-            sh '/var/lib/jenkins/.venv/bin/aws s3 cp s3://shippingdocker-secrets/env-ci .env'
+            sh '/var/lib/jenkins/.venv/bin/aws s3 cp s3://uber-digital-secrets/env-ci .env'
             sh './develop art key:generate'
         }
         stage('test') {

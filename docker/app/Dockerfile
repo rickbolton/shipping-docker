@@ -37,3 +37,6 @@ EXPOSE 80
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]
+
+COPY packaged /var/www/html
+RUN chown -R www-data: /var/www/html
